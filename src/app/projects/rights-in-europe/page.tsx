@@ -71,7 +71,7 @@ export default function RightsInEuropePage() {
                 <Badge variant="secondary">International Collaboration</Badge>
               </div>
               <Image
-                src="/photos/rights-in-europe.png"
+                src="/Portfolio/photos/rights-in-europe.png"
                 width={1200}
                 height={600}
                 alt="Rights in Europe"

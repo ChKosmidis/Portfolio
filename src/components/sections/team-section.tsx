@@ -12,28 +12,25 @@ const teamMembers: {
   name: string;
   role: string;
   bio: string;
-  avatar: string;
+  avatar?: string;
   initials: string;
 }[] = [
   {
     name: "Anna Semenova",
     role: "Project Curator",
     bio: "More than 20 years experience in education and civic engagement.",
-    avatar: "/photos/team-1.png",
     initials: "AS",
   },
   {
     name: "Chris Kosmidis",
     role: "Project Manager",
     bio: "MA in Comparative History, CEU, expertise in modern educational design, history of human rights and IT for NGOs.",
-    avatar: "/photos/team-2.png",
     initials: "CK",
   },
   {
     name: "Ruslan Dzhan",
     role: "Project Manager",
     bio: "Expertise in PR and GR for NGOs, crisis management and resilience expert.",
-    avatar: "/photos/team-3.png",
     initials: "RD",
   },
 ];

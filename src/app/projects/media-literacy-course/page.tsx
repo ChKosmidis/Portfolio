@@ -63,7 +63,7 @@ export default function MediaLiteracyCoursePage() {
                 <Badge variant="secondary">Critical Thinking</Badge>
               </div>
               <Image
-                src="/photos/media-literacy.png"
+                src="/Portfolio/photos/media-literacy.png"
                 width={1200}
                 height={600}
                 alt="Media Literacy Course"

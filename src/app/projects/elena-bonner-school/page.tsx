@@ -96,7 +96,7 @@ export default function ElenaBonnerSchoolPage() {
                 <Badge variant="secondary">Youth</Badge>
               </div>
               <Image
-                src="/photos/elena-bonner-school.png"
+                src="/Portfolio/photos/elena-bonner-school.png"
                 width={1200}
                 height={600}
                 alt="Elena Bonner School of Human Rights"

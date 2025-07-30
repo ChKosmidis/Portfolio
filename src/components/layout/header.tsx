@@ -24,7 +24,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image src="/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+          <Image src="/Portfolio/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
           <span className="font-headline text-xl font-bold tracking-tight">
             Elena Bonner Center
           </span>
@@ -55,7 +55,7 @@ export default function Header() {
               prefetch={false}
               onClick={handleLinkClick}
             >
-              <Image src="/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+              <Image src="/Portfolio/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
               <span className="font-headline text-xl font-bold tracking-tight">
                 Elena Bonner Center
               </span>

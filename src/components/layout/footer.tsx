@@ -12,7 +12,7 @@ export default function Footer() {
             className="flex items-center gap-2"
             prefetch={false}
           >
-            <Image src="/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+            <Image src="/Portfolio/photos/hero.png" alt="Elena Bonner Center Logo" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
             <span className="font-headline text-xl font-bold">
               Elena Bonner Center
             </span>
