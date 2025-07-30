@@ -65,12 +65,27 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+      - name: Check static export
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} next build
-          echo "Build completed, checking if out directory was created..."
-          if [ ! -d "out" ]; then
-            echo "out directory not found, running next export..."
-            ${{ steps.detect-package-manager.outputs.runner }} next export
+          echo "Checking if static export was created..."
+          if [ -d "out" ]; then
+            echo "✅ out directory exists"
+            ls -la out/
+            echo "Files in out directory:"
+            find out -type f | head -10
+          else
+            echo "❌ out directory not found"
+            echo "Current directory contents:"
+            ls -la
+            echo "Searching for HTML files:"
+            find . -name "*.html" -type f | head -10
+            echo "This might be a configuration issue with Next.js export"
+            exit 1
           fi
 
       - name: List build output

@@ -5,6 +5,7 @@ const nextConfig = {
     skipTrailingSlashRedirect: true,
     basePath: '/Portfolio',
     assetPrefix: '/Portfolio/',
+    outDir: 'out',
     images: {
         unoptimized: true,
         remotePatterns: [],
