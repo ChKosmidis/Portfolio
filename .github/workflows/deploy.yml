@@ -83,6 +83,19 @@ jobs:
             # Remove unnecessary files
             rm -rf out/.git out/.github out/node_modules out/.next
             ls -la out/
+          elif [ -d ".next/server/app" ] && [ -f ".next/server/app/index.html" ]; then
+            echo "✅ Found static files in .next/server/app (Next.js 15 export location)"
+            echo "Creating 'out' directory from .next/server/app..."
+            mkdir -p out
+            cp -r .next/server/app/* out/
+            # Also copy static assets if they exist
+            if [ -d ".next/static" ]; then
+              echo "Copying static assets..."
+              mkdir -p out/_next/static
+              cp -r .next/static/* out/_next/static/
+            fi
+            echo "Contents of out directory:"
+            ls -la out/
           else
             echo "❌ No static export found. Checking directory structure..."
             echo "Current directory:"
