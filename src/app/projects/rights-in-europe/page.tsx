@@ -88,8 +88,35 @@ const projectEditions = [
     accepted: 30,
     graduates: 28,
     status: "Completed",
-    description: "The foundational project that established dialogue between Russian and European scholars",
-    mission: "Conceived in response to the growing isolation and breakdown of academic dialogue between Russia and Europe. Against a backdrop of intensifying repressions and the dismantling of human rights education within Russia, our core mission was to establish a unique intellectual and collaborative space."
+    academicHours: 30,
+    ects: 5,
+    weeks: 6,
+    description: "Bridging Perspectives: Human Rights Dialogues Between Russia and Europe - The foundational project that established dialogue between expert communities",
+    mission: "Conceived as a response to growing academic isolation, designed to build bridges between expert communities in Russia and Europe. The project's mission was to provide a vital platform for discussion and the search for common values.",
+    support: "Co-funded by the European Commission 'EU Public Diplomacy - Russia Project' and the ENLIGHT European University Alliance",
+    practiceComponent: "Participants were divided into 6 teams of 5 students. Each team conducted original research and prepared a 10-minute presentation on topics such as comparative analysis of human rights in the EU and Russia or deep dives into specific rights-based issues.",
+    blocks: [
+      {
+        title: "Cluster 1: Human Rights in Russia: New Heights of Repressions",
+        topics: [
+          { title: "Modern Russia: a Reversal from Human Rights to Traditional Values", lecturer: "Dr. Natasza Krawczuk", role: "Senior Researcher and Lawyer" },
+          { title: "Prosecution of Russia's War of Aggression against Ukraine and the Limits of International Law", lecturer: "Dr. Gleb Bogush", role: "University of Cologne" },
+          { title: "The Geo-politics of Gender and Sexuality in an Era of EU-Russia Competition", lecturer: "Dr. Laura Luciani", role: "Ghent University" },
+          { title: "Human Rights and Russian Society (Sociological Explorations)", lecturer: "Dr. Dmitry Dubrovsky", role: "Charles University" },
+          { title: "Russia's Other War: The Fight over Freedom of Expression", lecturer: "Prof. Dr. Ilya Yablokov", role: "University of Sheffield" },
+        ]
+      },
+      {
+        title: "Cluster 2: Human Rights from the European perspective: a beacon of hope?",
+        topics: [
+          { title: "Human Rights in Europe and its Institutions: Between Powers and Obligations", lecturer: "Dr. Joyce De Coninck", role: "Ghent University" },
+          { title: "Human Rights Restoration in Europe: A Retrospective from Post-Dictatorship Spain and Portugal", lecturer: "Dr. Filipa Raimundo", role: "ISCTE-Lisbon University Institute" },
+          { title: "The Nexus between Democracy, Human Rights and Peace", lecturer: "Dr. Alina Cherviatsova", role: "Ghent University" },
+          { title: "Human Rights Aspects of International Migration Flows to Europe", lecturer: "Dr. Ciara Smyth", role: "University of Galway" },
+          { title: "Climate Change and Human Rights", lecturer: "Dr. Hendrik Schoukens", role: "Ghent University" },
+        ]
+      }
+    ]
   }
 ];
 
@@ -153,7 +180,7 @@ export default function RightsInEuropePage() {
                   Online School - Rights in Europe: the risks and impact of authoritarianism
                 </h1>
                 <p className="mt-4 text-xl text-foreground/80 max-w-3xl mx-auto">
-                  A major international collaboration establishing vital dialogue between Russian and European scholars on human rights in the face of growing authoritarianism
+                  A major international collaboration establishing vital dialogue between scholars and students on human rights in the face of growing authoritarianism
                 </p>
               </div>
               
@@ -180,7 +207,7 @@ export default function RightsInEuropePage() {
                 <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
                 <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
                   In partnership with prestigious European universities, we aim to rebuild intellectual and cultural bridges eroded by the political climate. 
-                  Our mission is to provide a vital platform for constructive dialogue between Russian and European scholars, 
+                  Our mission is to provide a vital platform for constructive dialogue between scholars and students from different backgrounds, 
                   enabling participants to find common ground and reaffirm shared humanistic values in human rights education.
                 </p>
               </CardContent>
@@ -304,6 +331,24 @@ export default function RightsInEuropePage() {
                               <div className="text-xs text-muted-foreground">Weeks Duration</div>
                             </div>
                           </div>
+                        )}
+
+                        {edition.support && (
+                          <Card className="mb-6 bg-blue-50 border-blue-200">
+                            <CardContent className="p-4">
+                              <h4 className="font-semibold text-blue-900 mb-2">Funding & Support</h4>
+                              <p className="text-sm text-blue-800">{edition.support}</p>
+                            </CardContent>
+                          </Card>
+                        )}
+
+                        {edition.practiceComponent && (
+                          <Card className="mb-6 bg-green-50 border-green-200">
+                            <CardContent className="p-4">
+                              <h4 className="font-semibold text-green-900 mb-2">Practice-Oriented Learning: Collaborative Group Projects</h4>
+                              <p className="text-sm text-green-800">{edition.practiceComponent}</p>
+                            </CardContent>
+                          </Card>
                         )}
                         
                         <div className="mb-6">
