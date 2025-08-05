@@ -119,18 +119,6 @@ export default function MediaLiteracyCoursePage() {
               </Link>
             </div>
             
-            {/* Mission Statement */}
-            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-16">
-              <CardContent className="p-8 text-center">
-                <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
-                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-                  In an era of information overload and digital manipulation, the Media Literacy Course serves as a beacon of critical thinking. 
-                  We empower individuals with the skills to navigate complex information landscapes, distinguish truth from manipulation, 
-                  and become informed, resilient digital citizens capable of making thoughtful decisions in an interconnected world.
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Hero Section */}
             <div className="space-y-6 mb-16">
               <div className="text-center">
@@ -158,6 +146,18 @@ export default function MediaLiteracyCoursePage() {
                 className="aspect-video w-full rounded-xl object-cover shadow-lg"
               />
             </div>
+
+            {/* Mission Statement */}
+            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-16">
+              <CardContent className="p-8 text-center">
+                <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
+                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+                  In an era of information overload and digital manipulation, the Media Literacy Course serves as a beacon of critical thinking. 
+                  We empower individuals with the skills to navigate complex information landscapes, distinguish truth from manipulation, 
+                  and become informed, resilient digital citizens capable of making thoughtful decisions in an interconnected world.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Overall Impact Section */}
             <div className="mb-16">
