@@ -74,10 +74,10 @@ const latestCohorts = [
 ];
 
 const archiveCohorts = [
-  { title: "Media School 4", applications: 611, accepted: 172, graduates: 69 },
-  { title: "Media School 3", applications: 185, accepted: 124, graduates: 66 },
-  { title: "Media School 2", applications: 153, accepted: 117, graduates: 52 },
-  { title: "Media School 1", applications: 169, accepted: 118, graduates: 73 },
+  { title: "Media Literacy Cource 4", applications: 611, accepted: 172, graduates: 69 },
+  { title: "Media Literacy Cource 3", applications: 185, accepted: 124, graduates: 66 },
+  { title: "Media Literacy Cource 2", applications: 153, accepted: 117, graduates: 52 },
+  { title: "Media Literacy Cource 1", applications: 169, accepted: 118, graduates: 73 },
 ];
 
 const coreTopics = [
@@ -219,13 +219,13 @@ export default function MediaLiteracyCoursePage() {
                     className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
                   >
                     <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">Latest</Badge>
-                    Media School 6
+                    Media Literacy Course 6
                   </TabsTrigger>
                   <TabsTrigger 
                     value="cohort-5"
                     className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
                   >
-                    Media School 5
+                    Media Literacy Course 5
                   </TabsTrigger>
                 </TabsList>
                 
