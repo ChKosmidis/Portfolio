@@ -3,40 +3,111 @@ import Footer from '@/components/layout/footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, CheckCircle, Award, Users, Repeat, Star } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Progress } from '@/components/ui/progress';
+import { ArrowLeft, CheckCircle, Award, Users, Repeat, Star, Calendar, GraduationCap, TrendingUp, BookOpen, Mic, Brain, Shield } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const keyAchievements = [
-  {
-    icon: <Award className="h-8 w-8 text-primary" />,
-    value: "6",
-    label: "Successful Courses",
-  },
+const overallImpact = [
   {
     icon: <Users className="h-8 w-8 text-primary" />,
-    value: "300+",
-    label: "Graduates",
+    value: "1,427",
+    label: "Total Applications",
+    description: "Over 3 years"
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-primary" />,
-    value: "1,000+",
-    label: "Applications Received",
+    value: "835",
+    label: "Participants Accepted",
+    description: "Acceptance rate: 58%"
   },
   {
-    icon: <Star className="h-8 w-8 text-primary" />,
-    value: "35+",
-    label: "Media Experts Engaged",
+    icon: <GraduationCap className="h-8 w-8 text-primary" />,
+    value: "390",
+    label: "Graduates",
+    description: "Completion rate: 47%"
+  },
+  {
+    icon: <Award className="h-8 w-8 text-primary" />,
+    value: "6",
+    label: "Cohorts Completed",
+    description: "Continuous growth"
   },
 ];
 
-const courseContent = [
-    "Detect and Counter Disinformation: Master practical techniques for identifying and combating fake news.",
-    "Protect Digital Identity: Enhance skills in personal data protection and digital hygiene.",
-    "Analyze New Technologies: Understand the influence of Artificial Intelligence on media.",
-    "Resist Manipulation: Explore the psychology of information perception and protect against manipulative tactics.",
-    "Navigate Media Ethics and understand future trends shaping the industry.",
-]
+const latestCohorts = [
+  {
+    title: "Media School 6: Disinformation in the Digital Age",
+    period: "June 4 - 25, 2025",
+    applications: 180,
+    accepted: 142,
+    graduates: 67,
+    acceptanceRate: 79,
+    completionRate: 47,
+    status: "Latest",
+    topics: [
+      { title: "Disinformation in the Digital Age", lecturer: "Ilya Ber", role: "Founder & Editor-in-Chief, Provereno.media" },
+      { title: "Scrolling into the Abyss: Digital Media & Propaganda Vulnerability", lecturer: "Irina Yakutenko", role: "Biologist & Science Journalist" },
+      { title: "Who Controls Whom: The Text or You?", lecturer: "Oksana Stanevich", role: "Open & Decentralized Science Enthusiast" },
+      { title: "Newspeak: How Language Constructs Reality", lecturer: "Alexandra Arkhipova", role: "Social Anthropologist" },
+      { title: "Legal Risks for Social Media Users", lecturer: "Galina Arapova", role: "Media Lawyer, Mass Media Defence Center" },
+      { title: "AI in Media: Optimist vs Pessimist Debate", lecturer: "Andrey Goryanov & Leonid Yuldashev", role: "BBC Eye & Internet History Researcher" },
+      { title: "Information Wars: Propaganda & Manipulation", lecturer: "Vasily Gatov", role: "USC Annenberg Center Senior Fellow" },
+    ]
+  },
+  {
+    title: "Media School 5",
+    period: "February 19 - March 15, 2025",
+    applications: 129,
+    accepted: 162,
+    graduates: 63,
+    acceptanceRate: 126, // Over 100% indicates waitlist acceptance
+    completionRate: 39,
+    status: "Recent",
+    topics: [
+      { title: "Disinformation in the Digital Age", lecturer: "Ilya Ber", role: "Provereno.media" },
+      { title: "How Media in Exile Survive and Thrive", lecturer: "Polina Filippova", role: "Producer, Radio Sakharov" },
+      { title: "Urban Legends: How They Arise and Why We Believe", lecturer: "Alexandra Arkhipova", role: "Social Anthropologist" },
+      { title: "Digital Environment's Impact on Cognition", lecturer: "Maria Falikman", role: "PhD Psychology, University of the South" },
+      { title: "AI as a Tool for Media: Risks and Opportunities", lecturer: "Andrey Goryanov", role: "Executive Producer, BBC Eye" },
+      { title: "Information Wars: Propaganda & Censorship", lecturer: "Vasily Gatov", role: "USC Annenberg" },
+      { title: "Will Tomorrow Be Worse? How We Read News", lecturer: "Alexander Amzin", role: "Media Consultant" },
+      { title: "Traveling in Disguise: Internet Trust", lecturer: "Leonid Yuldashev", role: "eQualitie" },
+    ]
+  }
+];
+
+const archiveCohorts = [
+  { title: "Media School 4", period: "Sep-Oct 2024", applications: 611, accepted: 172, graduates: 69 },
+  { title: "Media School 3", period: "2024", applications: 185, accepted: 124, graduates: 66 },
+  { title: "Media School 2", period: "2024", applications: 153, accepted: 117, graduates: 52 },
+  { title: "Media School 1", period: "2024", applications: 169, accepted: 118, graduates: 73 },
+];
+
+const coreTopics = [
+  {
+    icon: <Shield className="h-6 w-6" />,
+    title: "Disinformation Detection",
+    description: "Master techniques for identifying and combating fake news in digital environments"
+  },
+  {
+    icon: <Brain className="h-6 w-6" />,
+    title: "Digital Psychology",
+    description: "Understand how digital media affects perception, memory, and decision-making"
+  },
+  {
+    icon: <BookOpen className="h-6 w-6" />,
+    title: "Media Ethics",
+    description: "Navigate the ethical landscape of modern journalism and content creation"
+  },
+  {
+    icon: <Mic className="h-6 w-6" />,
+    title: "Information Wars",
+    description: "Analyze propaganda techniques and manipulation strategies in media"
+  }
+];
 
 export default function MediaLiteracyCoursePage() {
   return (
@@ -44,7 +115,7 @@ export default function MediaLiteracyCoursePage() {
       <Header />
       <main className="flex-1 bg-background py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-6xl">
             <div className="mb-8">
               <Link href="/#projects">
                 <Button variant="outline">
@@ -53,69 +124,226 @@ export default function MediaLiteracyCoursePage() {
                 </Button>
               </Link>
             </div>
-            <div className="space-y-6">
-              <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
-                Media Literacy Course Series
-              </h1>
-              <div className="flex flex-wrap items-center gap-4">
-                <Badge variant="secondary">Media Literacy</Badge>
-                <Badge variant="secondary">Digital Safety</Badge>
-                <Badge variant="secondary">Critical Thinking</Badge>
+            
+            {/* Hero Section */}
+            <div className="space-y-6 mb-16">
+              <div className="text-center">
+                <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl lg:text-6xl">
+                  Media Literacy School
+                </h1>
+                <p className="mt-4 text-xl text-foreground/80 max-w-3xl mx-auto">
+                  Empowering individuals to navigate the complex modern information landscape through critical media consumption skills
+                </p>
               </div>
+              
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Badge variant="secondary" className="text-sm px-4 py-2">Media Literacy</Badge>
+                <Badge variant="secondary" className="text-sm px-4 py-2">Digital Safety</Badge>
+                <Badge variant="secondary" className="text-sm px-4 py-2">Critical Thinking</Badge>
+                <Badge variant="secondary" className="text-sm px-4 py-2">Information Warfare</Badge>
+              </div>
+              
               <Image
                 src="/Portfolio/photos/media-literacy.png"
                 width={1200}
                 height={600}
-                alt="Media Literacy Course"
-                data-ai-hint="media literacy"
-                className="aspect-video w-full rounded-lg object-cover"
+                alt="Media Literacy School"
+                data-ai-hint="media literacy digital education"
+                className="aspect-video w-full rounded-xl object-cover shadow-lg"
               />
-              <div className="prose max-w-none text-foreground/80 space-y-4">
-                <p>
-                  In an era of information overload, this program equips individuals with essential skills for critical and safe navigation of the digital world. The course is designed to be highly adaptive, with a new curriculum developed for each cycle to confront the latest trends and threats in media.
-                </p>
-                <Card className="bg-secondary">
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2 font-headline text-2xl text-accent"><Repeat className="h-6 w-6" /> Dynamic Curriculum</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>The 8-session online program provides a comprehensive deep-dive into key aspects of modern media literacy.</p>
-                        <ul className="mt-4 space-y-2">
-                            {courseContent.map((item, index) => (
-                                <li key={index} className="flex items-start gap-2">
-                                    <CheckCircle className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-4 text-sm text-muted-foreground">
-                            Format: Classes are held twice a week on Zoom (weekday evenings and weekends), offering a flexible format for working professionals and students.
-                        </p>
-                    </CardContent>
-                </Card>
-              </div>
+            </div>
 
-               <div className="py-12">
-                <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
-                  Key Achievements
-                </h2>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                    {keyAchievements.map((metric) => (
-                      <Card key={metric.label} className="text-center">
-                        <CardHeader className="flex flex-col items-center gap-4">
-                          {metric.icon}
-                          <CardTitle className="text-4xl font-extrabold text-accent">
-                            {metric.value}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm font-medium text-muted-foreground">{metric.label}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                </div>
+            {/* Overall Impact Section */}
+            <div className="mb-16">
+              <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
+                3-Year Impact Overview
+              </h2>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {overallImpact.map((metric, index) => (
+                  <Card key={metric.label} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <CardHeader className="flex flex-col items-center gap-4 pb-4">
+                      <div className="p-3 rounded-full bg-primary/10">
+                        {metric.icon}
+                      </div>
+                      <CardTitle className="text-4xl font-extrabold text-accent">
+                        {metric.value}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="font-semibold text-foreground">{metric.label}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{metric.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
+
+            {/* Core Topics Section */}
+            <div className="mb-16">
+              <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
+                Core Learning Areas
+              </h2>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {coreTopics.map((topic, index) => (
+                  <Card key={topic.title} className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                        {topic.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-2">{topic.title}</h3>
+                        <p className="text-sm text-muted-foreground">{topic.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Recent Cohorts Section */}
+            <div className="mb-16">
+              <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
+                Recent Cohorts
+              </h2>
+              
+              <Tabs defaultValue="cohort-6" className="w-full">
+                <TabsList className="grid w-full grid-cols-2 mb-8">
+                  <TabsTrigger value="cohort-6" className="flex items-center gap-2">
+                    <Badge variant="secondary" className="text-xs">Latest</Badge>
+                    Media School 6
+                  </TabsTrigger>
+                  <TabsTrigger value="cohort-5">Media School 5</TabsTrigger>
+                </TabsList>
+                
+                {latestCohorts.map((cohort, index) => (
+                  <TabsContent key={index} value={`cohort-${6-index}`} className="space-y-6">
+                    <Card className="border-2 border-primary/20">
+                      <CardHeader>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <CardTitle className="text-2xl font-bold">{cohort.title}</CardTitle>
+                            <div className="flex items-center gap-2 mt-2">
+                              <Calendar className="h-4 w-4 text-muted-foreground" />
+                              <span className="text-muted-foreground">{cohort.period}</span>
+                            </div>
+                          </div>
+                          <Badge variant={cohort.status === "Latest" ? "default" : "secondary"}>
+                            {cohort.status}
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-6 md:grid-cols-3 mb-6">
+                          <div className="text-center">
+                            <div className="text-3xl font-bold text-primary">{cohort.applications}</div>
+                            <div className="text-sm text-muted-foreground">Applications</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-3xl font-bold text-green-600">{cohort.accepted}</div>
+                            <div className="text-sm text-muted-foreground">Accepted</div>
+                            <div className="mt-1">
+                              <Progress value={cohort.acceptanceRate} className="h-2" />
+                              <span className="text-xs text-muted-foreground">{cohort.acceptanceRate}% rate</span>
+                            </div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-3xl font-bold text-blue-600">{cohort.graduates}</div>
+                            <div className="text-sm text-muted-foreground">Graduates</div>
+                            <div className="mt-1">
+                              <Progress value={cohort.completionRate} className="h-2" />
+                              <span className="text-xs text-muted-foreground">{cohort.completionRate}% completion</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                            <BookOpen className="h-5 w-5" />
+                            Curriculum & Expert Lecturers
+                          </h3>
+                          <Accordion type="single" collapsible className="w-full">
+                            {cohort.topics.map((topic, topicIndex) => (
+                              <AccordionItem key={topicIndex} value={`topic-${topicIndex}`}>
+                                <AccordionTrigger className="text-left">
+                                  <div>
+                                    <div className="font-medium">{topic.title}</div>
+                                    <div className="text-sm text-muted-foreground mt-1">{topic.lecturer}</div>
+                                  </div>
+                                </AccordionTrigger>
+                                <AccordionContent>
+                                  <div className="pt-2 pl-4 border-l-2 border-primary/20">
+                                    <p className="text-sm text-muted-foreground">
+                                      <strong>Expert:</strong> {topic.lecturer}
+                                    </p>
+                                    <p className="text-sm text-muted-foreground">
+                                      <strong>Role:</strong> {topic.role}
+                                    </p>
+                                  </div>
+                                </AccordionContent>
+                              </AccordionItem>
+                            ))}
+                          </Accordion>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                ))}
+              </Tabs>
+            </div>
+
+            {/* Archive Section */}
+            <div className="mb-16">
+              <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
+                Historical Performance
+              </h2>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5" />
+                    Previous Cohorts Archive
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {archiveCohorts.map((cohort, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
+                        <div>
+                          <h3 className="font-semibold">{cohort.title}</h3>
+                          <p className="text-sm text-muted-foreground">{cohort.period}</p>
+                        </div>
+                        <div className="grid grid-cols-3 gap-6 text-center">
+                          <div>
+                            <div className="text-lg font-bold">{cohort.applications}</div>
+                            <div className="text-xs text-muted-foreground">Applications</div>
+                          </div>
+                          <div>
+                            <div className="text-lg font-bold text-green-600">{cohort.accepted}</div>
+                            <div className="text-xs text-muted-foreground">Accepted</div>
+                          </div>
+                          <div>
+                            <div className="text-lg font-bold text-blue-600">{cohort.graduates}</div>
+                            <div className="text-xs text-muted-foreground">Graduates</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Mission Statement */}
+            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+              <CardContent className="p-8 text-center">
+                <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
+                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+                  In an era of information overload and digital manipulation, the Media Literacy School serves as a beacon of critical thinking. 
+                  We empower individuals with the skills to navigate complex information landscapes, distinguish truth from manipulation, 
+                  and become informed, resilient digital citizens capable of making thoughtful decisions in an interconnected world.
+                </p>
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </main>
