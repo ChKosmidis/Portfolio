@@ -138,7 +138,7 @@ export default function MediaLiteracyCoursePage() {
               </div>
               
               <Image
-                src="/Portfolio/photos/media-literacy.png"
+                src="/photos/media-literacy.png"
                 width={1200}
                 height={600}
                 alt="Media Literacy Course"

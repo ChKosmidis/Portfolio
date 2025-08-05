@@ -127,7 +127,7 @@ export default function ElenaBonnerSchoolPage() {
               </div>
               
               <Image
-                src="/Portfolio/photos/elena-bonner-school.png"
+                src="/photos/elena-bonner-school.png"
                 width={1200}
                 height={600}
                 alt="Elena Bonner School of Human Rights"

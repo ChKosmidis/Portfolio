@@ -16,7 +16,7 @@ const projects = [
     title: "Elena Bonner School of Human Rights",
     description:
       "An intensive online program on the theory and practice of human rights is aimed at those who live in Russia and abroad.",
-    image: "/Portfolio/photos/elena-bonner-school.png",
+    image: "/photos/elena-bonner-school.png",
     tags: ["Civic Education", "Technology", "Youth"],
     link: "/projects/elena-bonner-school",
   },
@@ -24,7 +24,7 @@ const projects = [
     title: "Media Literacy Course",
     description:
       "This program equips individuals with essential skills for critical and safe navigation of the digital world.",
-    image: "/Portfolio/photos/media-literacy.png",
+    image: "/photos/media-literacy.png",
     tags: ["Media Literacy", "Digital Safety", "Critical Thinking"],
     link: "/projects/media-literacy-course",
   },
@@ -32,7 +32,7 @@ const projects = [
     title: "School of Public Defender",
     description:
       "An intensive program equipping Russian activists with practical legal knowledge to navigate politically motivated charges.",
-    image: "/Portfolio/photos/public-defender.png",
+    image: "/photos/public-defender.png",
     tags: ["Legal Education", "Activism", "Community Defense"],
     link: "/projects/school-of-public-defender",
   },
@@ -40,7 +40,7 @@ const projects = [
     title: "Online School on Human Rights - Rights in Europe",
     description:
       "A major international collaboration with the ENLIGHT+ European university consortium to address the erosion of fundamental rights.",
-    image: "/Portfolio/photos/rights-in-europe.png",
+    image: "/photos/rights-in-europe.png",
     tags: ["Human Rights", "Academia", "International Collaboration"],
     link: "/projects/rights-in-europe",
   },

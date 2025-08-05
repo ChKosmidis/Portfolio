@@ -192,7 +192,7 @@ export default function RightsInEuropePage() {
               </div>
               
               <Image
-                src="/Portfolio/photos/rights-in-europe.png"
+                src="/photos/rights-in-europe.png"
                 width={1200}
                 height={600}
                 alt="Rights in Europe - Online School"

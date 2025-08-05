@@ -61,7 +61,7 @@ export default function SchoolOfPublicDefenderPage() {
                 <Badge variant="secondary">Community Defense</Badge>
               </div>
               <Image
-                src="/Portfolio/photos/public-defender.png"
+                src="/photos/public-defender.png"
                 width={1200}
                 height={600}
                 alt="School of Public Defender"
