@@ -3,10 +3,8 @@ import Footer from '@/components/layout/footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Progress } from '@/components/ui/progress';
-import { ArrowLeft, CheckCircle, Award, Users, Repeat, Star, Calendar, GraduationCap, TrendingUp, BookOpen, Mic, Brain, Shield } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Award, Users, Calendar, GraduationCap, TrendingUp, BookOpen, Mic, Brain, Shield } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -44,15 +42,13 @@ const latestCohorts = [
     applications: 180,
     accepted: 142,
     graduates: 67,
-    acceptanceRate: 79,
-    completionRate: 47,
     status: "Latest",
     topics: [
       { title: "Disinformation in the Digital Age", lecturer: "Ilya Ber", role: "Founder & Editor-in-Chief, Provereno.media" },
       { title: "Scrolling into the Abyss: Digital Media & Propaganda Vulnerability", lecturer: "Irina Yakutenko", role: "Biologist & Science Journalist" },
       { title: "Who Controls Whom: The Text or You?", lecturer: "Oksana Stanevich", role: "Open & Decentralized Science Enthusiast" },
       { title: "Newspeak: How Language Constructs Reality", lecturer: "Alexandra Arkhipova", role: "Social Anthropologist" },
-      { title: "Legal Risks for Social Media Users", lecturer: "Galina Arapova", role: "Media Lawyer, Mass Media Defence Center" },
+      { title: "Legal Risks for Social Media Users", lecturer: "Galina Arapova", role: "Media Lawyer, Mass Media Defence Centre" },
       { title: "AI in Media: Optimist vs Pessimist Debate", lecturer: "Andrey Goryanov & Leonid Yuldashev", role: "BBC Eye & Internet History Researcher" },
       { title: "Information Wars: Propaganda & Manipulation", lecturer: "Vasily Gatov", role: "USC Annenberg Center Senior Fellow" },
     ]
@@ -63,8 +59,6 @@ const latestCohorts = [
     applications: 129,
     accepted: 162,
     graduates: 63,
-    acceptanceRate: 126, // Over 100% indicates waitlist acceptance
-    completionRate: 39,
     status: "Recent",
     topics: [
       { title: "Disinformation in the Digital Age", lecturer: "Ilya Ber", role: "Provereno.media" },
@@ -80,10 +74,10 @@ const latestCohorts = [
 ];
 
 const archiveCohorts = [
-  { title: "Media School 4", period: "Sep-Oct 2024", applications: 611, accepted: 172, graduates: 69 },
-  { title: "Media School 3", period: "2024", applications: 185, accepted: 124, graduates: 66 },
-  { title: "Media School 2", period: "2024", applications: 153, accepted: 117, graduates: 52 },
-  { title: "Media School 1", period: "2024", applications: 169, accepted: 118, graduates: 73 },
+  { title: "Media School 4", applications: 611, accepted: 172, graduates: 69 },
+  { title: "Media School 3", applications: 185, accepted: 124, graduates: 66 },
+  { title: "Media School 2", applications: 153, accepted: 117, graduates: 52 },
+  { title: "Media School 1", applications: 169, accepted: 118, graduates: 73 },
 ];
 
 const coreTopics = [
@@ -125,11 +119,23 @@ export default function MediaLiteracyCoursePage() {
               </Link>
             </div>
             
+            {/* Mission Statement */}
+            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-16">
+              <CardContent className="p-8 text-center">
+                <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
+                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+                  In an era of information overload and digital manipulation, the Media Literacy Course serves as a beacon of critical thinking. 
+                  We empower individuals with the skills to navigate complex information landscapes, distinguish truth from manipulation, 
+                  and become informed, resilient digital citizens capable of making thoughtful decisions in an interconnected world.
+                </p>
+              </CardContent>
+            </Card>
+
             {/* Hero Section */}
             <div className="space-y-6 mb-16">
               <div className="text-center">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl lg:text-6xl">
-                  Media Literacy School
+                  Media Literacy Course
                 </h1>
                 <p className="mt-4 text-xl text-foreground/80 max-w-3xl mx-auto">
                   Empowering individuals to navigate the complex modern information landscape through critical media consumption skills
@@ -147,7 +153,7 @@ export default function MediaLiteracyCoursePage() {
                 src="/Portfolio/photos/media-literacy.png"
                 width={1200}
                 height={600}
-                alt="Media Literacy School"
+                alt="Media Literacy Course"
                 data-ai-hint="media literacy digital education"
                 className="aspect-video w-full rounded-xl object-cover shadow-lg"
               />
@@ -207,12 +213,20 @@ export default function MediaLiteracyCoursePage() {
               </h2>
               
               <Tabs defaultValue="cohort-6" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8">
-                  <TabsTrigger value="cohort-6" className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-xs">Latest</Badge>
+                <TabsList className="grid w-full grid-cols-2 mb-8 p-2 bg-muted rounded-lg">
+                  <TabsTrigger 
+                    value="cohort-6" 
+                    className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
+                  >
+                    <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300">Latest</Badge>
                     Media School 6
                   </TabsTrigger>
-                  <TabsTrigger value="cohort-5">Media School 5</TabsTrigger>
+                  <TabsTrigger 
+                    value="cohort-5"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
+                  >
+                    Media School 5
+                  </TabsTrigger>
                 </TabsList>
                 
                 {latestCohorts.map((cohort, index) => (
@@ -241,18 +255,10 @@ export default function MediaLiteracyCoursePage() {
                           <div className="text-center">
                             <div className="text-3xl font-bold text-green-600">{cohort.accepted}</div>
                             <div className="text-sm text-muted-foreground">Accepted</div>
-                            <div className="mt-1">
-                              <Progress value={cohort.acceptanceRate} className="h-2" />
-                              <span className="text-xs text-muted-foreground">{cohort.acceptanceRate}% rate</span>
-                            </div>
                           </div>
                           <div className="text-center">
                             <div className="text-3xl font-bold text-blue-600">{cohort.graduates}</div>
                             <div className="text-sm text-muted-foreground">Graduates</div>
-                            <div className="mt-1">
-                              <Progress value={cohort.completionRate} className="h-2" />
-                              <span className="text-xs text-muted-foreground">{cohort.completionRate}% completion</span>
-                            </div>
                           </div>
                         </div>
                         
@@ -261,28 +267,17 @@ export default function MediaLiteracyCoursePage() {
                             <BookOpen className="h-5 w-5" />
                             Curriculum & Expert Lecturers
                           </h3>
-                          <Accordion type="single" collapsible className="w-full">
+                          <div className="space-y-4">
                             {cohort.topics.map((topic, topicIndex) => (
-                              <AccordionItem key={topicIndex} value={`topic-${topicIndex}`}>
-                                <AccordionTrigger className="text-left">
-                                  <div>
-                                    <div className="font-medium">{topic.title}</div>
-                                    <div className="text-sm text-muted-foreground mt-1">{topic.lecturer}</div>
-                                  </div>
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                  <div className="pt-2 pl-4 border-l-2 border-primary/20">
-                                    <p className="text-sm text-muted-foreground">
-                                      <strong>Expert:</strong> {topic.lecturer}
-                                    </p>
-                                    <p className="text-sm text-muted-foreground">
-                                      <strong>Role:</strong> {topic.role}
-                                    </p>
-                                  </div>
-                                </AccordionContent>
-                              </AccordionItem>
+                              <div key={topicIndex} className="p-4 rounded-lg bg-secondary/30 border border-secondary">
+                                <h4 className="font-medium text-foreground mb-2">{topic.title}</h4>
+                                <div className="text-sm text-muted-foreground">
+                                  <p><strong>Expert:</strong> {topic.lecturer}</p>
+                                  <p><strong>Role:</strong> {topic.role}</p>
+                                </div>
+                              </div>
                             ))}
-                          </Accordion>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -309,7 +304,6 @@ export default function MediaLiteracyCoursePage() {
                       <div key={index} className="flex items-center justify-between p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
                         <div>
                           <h3 className="font-semibold">{cohort.title}</h3>
-                          <p className="text-sm text-muted-foreground">{cohort.period}</p>
                         </div>
                         <div className="grid grid-cols-3 gap-6 text-center">
                           <div>
@@ -331,18 +325,6 @@ export default function MediaLiteracyCoursePage() {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Mission Statement */}
-            <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
-              <CardContent className="p-8 text-center">
-                <h2 className="font-headline text-2xl font-bold mb-4">Our Mission</h2>
-                <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-                  In an era of information overload and digital manipulation, the Media Literacy School serves as a beacon of critical thinking. 
-                  We empower individuals with the skills to navigate complex information landscapes, distinguish truth from manipulation, 
-                  and become informed, resilient digital citizens capable of making thoughtful decisions in an interconnected world.
-                </p>
-              </CardContent>
-            </Card>
 
           </div>
         </div>
