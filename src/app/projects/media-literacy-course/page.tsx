@@ -37,7 +37,7 @@ const overallImpact = [
 
 const latestCohorts = [
   {
-    title: "Media School 6: Disinformation in the Digital Age",
+    title: "Media Literacy Course 6",
     period: "June 4 - 25, 2025",
     applications: 180,
     accepted: 142,
@@ -46,15 +46,15 @@ const latestCohorts = [
     topics: [
       { title: "Disinformation in the Digital Age", lecturer: "Ilya Ber", role: "Founder & Editor-in-Chief, Provereno.media" },
       { title: "Scrolling into the Abyss: Digital Media & Propaganda Vulnerability", lecturer: "Irina Yakutenko", role: "Biologist & Science Journalist" },
-      { title: "Who Controls Whom: The Text or You?", lecturer: "Oksana Stanevich", role: "Open & Decentralized Science Enthusiast" },
+      { title: "Reader vs. Text: Who Is in Control?", lecturer: "Oksana Stanevich", role: "Open & Decentralized Science Enthusiast" },
       { title: "Newspeak: How Language Constructs Reality", lecturer: "Alexandra Arkhipova", role: "Social Anthropologist" },
-      { title: "Legal Risks for Social Media Users", lecturer: "Galina Arapova", role: "Media Lawyer, Mass Media Defence Centre" },
-      { title: "AI in Media: Optimist vs Pessimist Debate", lecturer: "Andrey Goryanov & Leonid Yuldashev", role: "BBC Eye & Internet History Researcher" },
+      { title: "Legal Risks for Social Media Users in Russia", lecturer: "Galina Arapova", role: "Media Lawyer, Mass Media Defence Centre" },
+      { title: "AI in Media: Optimist vs Pessimist Debate", lecturer: "Andrey Goryanov & Leonid Yuldashev", role: "BBC Eye & eQualitie, Internet History Researcher" },
       { title: "Information Wars: Propaganda & Manipulation", lecturer: "Vasily Gatov", role: "USC Annenberg Center Senior Fellow" },
     ]
   },
   {
-    title: "Media School 5",
+    title: "Media Literacy Course 5",
     period: "February 19 - March 15, 2025",
     applications: 129,
     accepted: 162,
@@ -68,7 +68,7 @@ const latestCohorts = [
       { title: "AI as a Tool for Media: Risks and Opportunities", lecturer: "Andrey Goryanov", role: "Executive Producer, BBC Eye" },
       { title: "Information Wars: Propaganda & Censorship", lecturer: "Vasily Gatov", role: "USC Annenberg" },
       { title: "Will Tomorrow Be Worse? How We Read News", lecturer: "Alexander Amzin", role: "Media Consultant" },
-      { title: "Traveling in Disguise: Internet Trust", lecturer: "Leonid Yuldashev", role: "eQualitie" },
+      { title: "Traveling in Disguise: Internet Trust", lecturer: "Leonid Yuldashev", role: "eQualitie, Internet History Researcher" },
     ]
   }
 ];
@@ -269,11 +269,11 @@ export default function MediaLiteracyCoursePage() {
                           </h3>
                           <div className="space-y-4">
                             {cohort.topics.map((topic, topicIndex) => (
-                              <div key={topicIndex} className="p-4 rounded-lg bg-secondary/30 border border-secondary">
-                                <h4 className="font-medium text-foreground mb-2">{topic.title}</h4>
-                                <div className="text-sm text-muted-foreground">
-                                  <p><strong>Expert:</strong> {topic.lecturer}</p>
-                                  <p><strong>Role:</strong> {topic.role}</p>
+                              <div key={topicIndex} className="p-6 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                <h4 className="font-semibold text-foreground mb-3 text-lg leading-relaxed">{topic.title}</h4>
+                                <div className="space-y-1">
+                                  <p className="text-base text-gray-800"><strong className="text-primary">Expert:</strong> {topic.lecturer}</p>
+                                  <p className="text-sm text-gray-600"><strong className="text-gray-700">Role:</strong> {topic.role}</p>
                                 </div>
                               </div>
                             ))}
@@ -289,7 +289,7 @@ export default function MediaLiteracyCoursePage() {
             {/* Archive Section */}
             <div className="mb-16">
               <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
-                Historical Performance
+                Previous Performance
               </h2>
               <Card>
                 <CardHeader>
