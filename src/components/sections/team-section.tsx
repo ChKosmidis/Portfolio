@@ -1,3 +1,5 @@
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -7,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from 'next/image';
+import { useEffect } from "react";
 
 const teamMembers: {
   name: string;
@@ -36,11 +39,56 @@ const teamMembers: {
 ];
 
 export default function TeamSection() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).gsap && (window as any).ScrollTrigger) {
+      const { gsap, ScrollTrigger } = window as any;
+      
+      // Animate section title
+      gsap.fromTo('.team-title', 
+        { 
+          opacity: 0, 
+          y: 50 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.team-title',
+            start: 'top 80%',
+          }
+        }
+      );
+
+      // Animate team cards
+      gsap.fromTo('.team-card', 
+        { 
+          opacity: 0, 
+          y: 60,
+          rotationY: 15
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationY: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.team-grid',
+            start: 'top 70%',
+          }
+        }
+      );
+    }
+  }, []);
+
   return (
     <section id="team" className="bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
+          <div className="space-y-2 team-title">
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
               Meet Our Team
             </h2>
@@ -49,9 +97,9 @@ export default function TeamSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:max-w-none lg:grid-cols-3 team-grid">
           {teamMembers.map((member) => (
-            <Card key={member.name} className="flex flex-col sm:flex-row items-center p-4 gap-4">
+            <Card key={member.name} className="team-card flex flex-col sm:flex-row items-center p-4 gap-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <Avatar className="h-24 w-24">
                 <AvatarImage src={member.avatar} alt={member.name} />
                 <AvatarFallback>{member.initials}</AvatarFallback>
