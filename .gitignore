@@ -7,9 +7,15 @@ yarn-error.log*
 # Next.js
 .next/
 out/
+dist/
+build/
 
 # Environment variables
 .env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Editor directories and files
 .vscode/
@@ -25,3 +31,17 @@ out/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+
+# Cache
+.eslintcache

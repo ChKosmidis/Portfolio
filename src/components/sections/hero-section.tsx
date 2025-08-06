@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import AnimatedLogo from "@/components/animated-logo";
 import { useEffect } from "react";
 
 export default function HeroSection() {
@@ -15,9 +14,17 @@ export default function HeroSection() {
       gsap.set('.hero-description', { opacity: 0, y: 60 });
       gsap.set('.hero-buttons', { opacity: 0, y: 40 });
       
-      // Create timeline
-      const tl = gsap.timeline({ delay: 1.5 });
+      // Logo animation setup
+      gsap.set('.logo-word', {
+        opacity: 0,
+        y: 50,
+        scale: 0.9
+      });
       
+      // Create timeline
+      const tl = gsap.timeline({ delay: 0.5 });
+      
+      // First animate text content
       tl.to('.hero-title', {
         opacity: 1,
         y: 0,
@@ -35,9 +42,38 @@ export default function HeroSection() {
         y: 0,
         duration: 0.6,
         ease: 'power3.out'
-      }, '-=0.3');
+      }, '-=0.3')
+      // Then animate logo words after main content
+      .to('.logo-word', {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        stagger: 0.3
+      }, '-=0.2');
     }
   }, []);
+
+  // НАСТРОЙКИ ПОЗИЦИЙ СЛОВ (легко редактировать)
+  const logoConfig = {
+    elena: {
+      top: '15%',
+      left: '10%',
+      size: 'text-5xl md:text-7xl lg:text-8xl'
+    },
+    bonner: {
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      size: 'text-5xl md:text-7xl lg:text-8xl'
+    },
+    center: {
+      bottom: '15%',
+      right: '10%',
+      size: 'text-5xl md:text-7xl lg:text-8xl'
+    }
+  };
 
   return (
     <section className="w-full h-screen bg-secondary flex items-center">
@@ -61,8 +97,52 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center lg:order-last h-full">
-            <AnimatedLogo />
+          
+          {/* LOGO SECTION - легко редактируемые позиции */}
+          <div className="flex items-center justify-center lg:order-last h-full min-h-[500px] relative">
+            <div className="relative w-full h-full">
+              
+              {/* Elena */}
+              <div 
+                className="logo-word absolute" 
+                style={{
+                  top: logoConfig.elena.top,
+                  left: logoConfig.elena.left
+                }}
+              >
+                <div className={`${logoConfig.elena.size} font-bold text-primary font-sans tracking-tight`}>
+                  Elena
+                </div>
+              </div>
+
+              {/* Bonner */}
+              <div 
+                className="logo-word absolute" 
+                style={{
+                  top: logoConfig.bonner.top,
+                  left: logoConfig.bonner.left,
+                  transform: logoConfig.bonner.transform
+                }}
+              >
+                <div className={`${logoConfig.bonner.size} font-bold text-primary font-sans tracking-tight`}>
+                  Bonner
+                </div>
+              </div>
+
+              {/* Center */}
+              <div 
+                className="logo-word absolute" 
+                style={{
+                  bottom: logoConfig.center.bottom,
+                  right: logoConfig.center.right
+                }}
+              >
+                <div className={`${logoConfig.center.size} font-bold text-primary font-sans tracking-tight`}>
+                  Center
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
