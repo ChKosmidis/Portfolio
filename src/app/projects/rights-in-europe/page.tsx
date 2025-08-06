@@ -267,19 +267,19 @@ export default function RightsInEuropePage() {
               </h2>
               
               <Tabs defaultValue="edition-2025" className="w-full">
-                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-2 bg-muted rounded-lg gap-2 sm:gap-0">
+                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-3 bg-muted rounded-lg gap-3 sm:gap-1">
                   <TabsTrigger 
                     value="edition-2025" 
-                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
+                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
                   >
                     <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300 shrink-0">Current</Badge>
-                    <span className="text-xs sm:text-base">2025 Flagship</span>
+                    <span className="text-sm sm:text-base font-medium">2025 Flagship</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="edition-2024"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
                   >
-                    <span className="text-xs sm:text-base">2024 Pilot</span>
+                    <span className="text-sm sm:text-base font-medium">2024 Pilot</span>
                   </TabsTrigger>
                 </TabsList>
                 

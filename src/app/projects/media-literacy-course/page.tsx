@@ -213,19 +213,19 @@ export default function MediaLiteracyCoursePage() {
               </h2>
               
               <Tabs defaultValue="cohort-6" className="w-full">
-                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-2 bg-muted rounded-lg gap-2 sm:gap-0">
+                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-3 bg-muted rounded-lg gap-3 sm:gap-1">
                   <TabsTrigger 
                     value="cohort-6" 
-                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
+                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
                   >
                     <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300 shrink-0">Latest</Badge>
-                    <span className="text-xs sm:text-base">Media Literacy Course 6</span>
+                    <span className="text-sm sm:text-base font-medium">Media Literacy Course 6</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="cohort-5"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
                   >
-                    <span className="text-xs sm:text-base">Media Literacy Course 5</span>
+                    <span className="text-sm sm:text-base font-medium">Media Literacy Course 5</span>
                   </TabsTrigger>
                 </TabsList>
                 

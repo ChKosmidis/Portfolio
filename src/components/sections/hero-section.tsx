@@ -60,18 +60,18 @@ export default function HeroSection() {
     elena: {
       top: '32%',
       left: '17%',
-      size: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+      size: 'text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
     },
     bonner: {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      size: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+      size: 'text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
     },
     center: {
       bottom: '32%',
       right: '17%',
-      size: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+      size: 'text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
     }
   };
 
