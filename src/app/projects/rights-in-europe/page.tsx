@@ -267,19 +267,19 @@ export default function RightsInEuropePage() {
               </h2>
               
               <Tabs defaultValue="edition-2025" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8 p-2 bg-muted rounded-lg">
+                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-2 bg-muted rounded-lg gap-2 sm:gap-0">
                   <TabsTrigger 
                     value="edition-2025" 
-                    className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
+                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
                   >
-                    <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300">Current</Badge>
-                    2025 Flagship
+                    <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300 shrink-0">Current</Badge>
+                    <span className="text-xs sm:text-base">2025 Flagship</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="edition-2024"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-lg py-3"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-sm sm:text-lg py-3 px-2 text-center"
                   >
-                    2024 Pilot
+                    <span className="text-xs sm:text-base">2024 Pilot</span>
                   </TabsTrigger>
                 </TabsList>
                 
