@@ -265,134 +265,135 @@ export default function RightsInEuropePage() {
               <h2 className="mb-8 text-center font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl">
                 Project Editions
               </h2>
-              
-              <Tabs defaultValue="edition-2025" className="w-full">
-                <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-8 p-3 bg-muted rounded-lg gap-3 sm:gap-1">
-                  <TabsTrigger 
-                    value="edition-2025" 
-                    className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
-                  >
-                    <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300 shrink-0">Current</Badge>
-                    <span className="text-sm sm:text-base font-medium">2025 Flagship</span>
-                  </TabsTrigger>
-                  <TabsTrigger 
-                    value="edition-2024"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
-                  >
-                    <span className="text-sm sm:text-base font-medium">2024 Pilot</span>
-                  </TabsTrigger>
-                </TabsList>
-                
-                {projectEditions.map((edition, index) => (
-                  <TabsContent key={index} value={`edition-${edition.period.includes('2025') ? '2025' : '2024'}`} className="space-y-6">
-                    <Card className="border-2 border-primary/20">
-                      <CardHeader>
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <CardTitle className="text-2xl font-bold">{edition.title}</CardTitle>
-                            <div className="flex items-center gap-2 mt-2">
-                              <Calendar className="h-4 w-4 text-muted-foreground" />
-                              <span className="text-muted-foreground">{edition.period}</span>
+              <div className="relative">
+                <Tabs defaultValue="edition-2025" className="w-full">
+                  <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-6 p-3 bg-muted rounded-lg gap-3 sm:gap-1 sticky top-[64px] z-10 shadow-sm">
+                    <TabsTrigger 
+                      value="edition-2025" 
+                      className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                    >
+                      <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300 shrink-0">Current</Badge>
+                      <span className="text-sm sm:text-base font-medium">2025 Flagship</span>
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="edition-2024"
+                      className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                    >
+                      <span className="text-sm sm:text-base font-medium">2024 Pilot</span>
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  {projectEditions.map((edition, index) => (
+                    <TabsContent key={index} value={`edition-${edition.period.includes('2025') ? '2025' : '2024'}`} className="space-y-6">
+                      <Card className="border-2 border-primary/20">
+                        <CardHeader>
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <CardTitle className="text-2xl font-bold">{edition.title}</CardTitle>
+                              <div className="flex items-center gap-2 mt-2">
+                                <Calendar className="h-4 w-4 text-muted-foreground" />
+                                <span className="text-muted-foreground">{edition.period}</span>
+                              </div>
                             </div>
+                            <Badge variant={edition.status === "Current" ? "default" : "secondary"}>
+                              {edition.status}
+                            </Badge>
                           </div>
-                          <Badge variant={edition.status === "Current" ? "default" : "secondary"}>
-                            {edition.status}
-                          </Badge>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="grid gap-6 md:grid-cols-3 mb-6">
-                          <div className="text-center">
-                            <div className="text-3xl font-bold text-primary">{edition.applications}</div>
-                            <div className="text-sm text-muted-foreground">Applications</div>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-3xl font-bold text-green-600">{edition.accepted}</div>
-                            <div className="text-sm text-muted-foreground">Accepted</div>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-3xl font-bold text-blue-600">{edition.graduates}</div>
-                            <div className="text-sm text-muted-foreground">Graduates</div>
-                          </div>
-                        </div>
-
-                        {edition.academicHours && (
-                          <div className="grid gap-4 md:grid-cols-3 mb-6 p-4 bg-secondary/20 rounded-lg">
+                        </CardHeader>
+                        <CardContent>
+                          <div className="grid gap-6 md:grid-cols-3 mb-6">
                             <div className="text-center">
-                              <div className="text-xl font-bold text-accent">{edition.academicHours}</div>
-                              <div className="text-xs text-muted-foreground">Academic Hours</div>
+                              <div className="text-3xl font-bold text-primary">{edition.applications}</div>
+                              <div className="text-sm text-muted-foreground">Applications</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-accent">{edition.ects}</div>
-                              <div className="text-xs text-muted-foreground">ECTS Credits</div>
+                              <div className="text-3xl font-bold text-green-600">{edition.accepted}</div>
+                              <div className="text-sm text-muted-foreground">Accepted</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-accent">{edition.weeks}</div>
-                              <div className="text-xs text-muted-foreground">Weeks Duration</div>
+                              <div className="text-3xl font-bold text-blue-600">{edition.graduates}</div>
+                              <div className="text-sm text-muted-foreground">Graduates</div>
                             </div>
                           </div>
-                        )}
 
-                        {edition.support && (
-                          <Card className="mb-6 bg-blue-50 border-blue-200">
-                            <CardContent className="p-4">
-                              <h4 className="font-semibold text-blue-900 mb-2">Funding & Support</h4>
-                              <p className="text-sm text-blue-800">{edition.support}</p>
-                            </CardContent>
-                          </Card>
-                        )}
-
-                        {edition.practiceComponent && (
-                          <Card className="mb-6 bg-green-50 border-green-200">
-                            <CardContent className="p-4">
-                              <h4 className="font-semibold text-green-900 mb-2">Practice-Oriented Learning: Collaborative Group Projects</h4>
-                              <p className="text-sm text-green-800">{edition.practiceComponent}</p>
-                            </CardContent>
-                          </Card>
-                        )}
-                        
-                        <div className="mb-6">
-                          <p className="text-foreground/80 italic">{edition.description}</p>
-                          {edition.mission && (
-                            <p className="text-foreground/80 mt-4">{edition.mission}</p>
+                          {edition.academicHours && (
+                            <div className="grid gap-4 md:grid-cols-3 mb-6 p-4 bg-secondary/20 rounded-lg">
+                              <div className="text-center">
+                                <div className="text-xl font-bold text-accent">{edition.academicHours}</div>
+                                <div className="text-xs text-muted-foreground">Academic Hours</div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-xl font-bold text-accent">{edition.ects}</div>
+                                <div className="text-xs text-muted-foreground">ECTS Credits</div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-xl font-bold text-accent">{edition.weeks}</div>
+                                <div className="text-xs text-muted-foreground">Weeks Duration</div>
+                              </div>
+                            </div>
                           )}
-                        </div>
-                        
-                        {edition.blocks && (
-                          <div>
-                            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                              <BookOpen className="h-5 w-5" />
-                              Curriculum Blocks & Expert Lecturers
-                            </h3>
-                            <div className="space-y-6">
-                              {edition.blocks.map((block, blockIndex) => (
-                                <Card key={blockIndex} className="border border-secondary/50">
-                                  <CardHeader className="pb-4">
-                                    <CardTitle className="text-lg text-primary">{block.title}</CardTitle>
-                                  </CardHeader>
-                                  <CardContent>
-                                    <div className="space-y-4">
-                                      {block.topics.map((topic, topicIndex) => (
-                                        <div key={topicIndex} className="p-4 rounded-lg bg-white border border-gray-200 shadow-sm">
-                                          <h4 className="font-semibold text-foreground mb-2 text-base leading-relaxed">{topic.title}</h4>
-                                          <div className="space-y-1">
-                                            <p className="text-sm text-gray-800"><strong className="text-primary">Expert:</strong> {topic.lecturer}</p>
-                                            <p className="text-xs text-gray-600"><strong className="text-gray-700">Role:</strong> {topic.role}</p>
-                                          </div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </CardContent>
-                                </Card>
-                              ))}
-                            </div>
+
+                          {edition.support && (
+                            <Card className="mb-6 bg-blue-50 border-blue-200">
+                              <CardContent className="p-4">
+                                <h4 className="font-semibold text-blue-900 mb-2">Funding & Support</h4>
+                                <p className="text-sm text-blue-800">{edition.support}</p>
+                              </CardContent>
+                            </Card>
+                          )}
+
+                          {edition.practiceComponent && (
+                            <Card className="mb-6 bg-green-50 border-green-200">
+                              <CardContent className="p-4">
+                                <h4 className="font-semibold text-green-900 mb-2">Practice-Oriented Learning: Collaborative Group Projects</h4>
+                                <p className="text-sm text-green-800">{edition.practiceComponent}</p>
+                              </CardContent>
+                            </Card>
+                          )}
+                          
+                          <div className="mb-6">
+                            <p className="text-foreground/80 italic">{edition.description}</p>
+                            {edition.mission && (
+                              <p className="text-foreground/80 mt-4">{edition.mission}</p>
+                            )}
                           </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </TabsContent>
-                ))}
-              </Tabs>
+                          
+                          {edition.blocks && (
+                            <div>
+                              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                                <BookOpen className="h-5 w-5" />
+                                Curriculum Blocks & Expert Lecturers
+                              </h3>
+                              <div className="space-y-6">
+                                {edition.blocks.map((block, blockIndex) => (
+                                  <Card key={blockIndex} className="border border-secondary/50">
+                                    <CardHeader className="pb-4">
+                                      <CardTitle className="text-lg text-primary">{block.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                      <div className="space-y-4">
+                                        {block.topics.map((topic, topicIndex) => (
+                                          <div key={topicIndex} className="p-4 rounded-lg bg-white border border-gray-200 shadow-sm">
+                                            <h4 className="font-semibold text-foreground mb-2 text-base leading-relaxed">{topic.title}</h4>
+                                            <div className="space-y-1">
+                                              <p className="text-sm text-gray-800"><strong className="text-primary">Expert:</strong> {topic.lecturer}</p>
+                                              <p className="text-xs text-gray-600"><strong className="text-gray-700">Role:</strong> {topic.role}</p>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </CardContent>
+                                  </Card>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              </div>
             </div>
 
             {/* Partners Section */}

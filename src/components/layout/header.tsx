@@ -10,10 +10,10 @@ import Image from "next/image";
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const navItems = [
-    { href: "#projects", label: "Projects" },
-    { href: "#impact", label: "Impact" },
-    { href: "#team", label: "Team" },
-    { href: "#documents", label: "Documents" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/#impact", label: "Impact" },
+    { href: "/#team", label: "Team" },
+    { href: "/#documents", label: "Documents" },
   ];
 
   const handleLinkClick = () => {
