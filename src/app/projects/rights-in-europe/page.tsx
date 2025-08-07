@@ -267,19 +267,19 @@ export default function RightsInEuropePage() {
               </h2>
               <div className="relative">
                 <Tabs defaultValue="edition-2025" className="w-full">
-                  <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-6 p-3 bg-muted rounded-lg gap-3 sm:gap-1 sticky top-[64px] z-10 shadow-sm">
-                    <TabsTrigger 
-                      value="edition-2025" 
-                      className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                  <TabsList className="flex w-full overflow-x-auto gap-2 mb-6 p-2 bg-muted rounded-lg sm:grid sm:grid-cols-2 sm:overflow-visible sm:gap-2 sm:p-3">
+                    <TabsTrigger
+                      value="edition-2025"
+                      className="flex-shrink-0 px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-medium text-sm sm:text-base leading-snug min-w-fit"
                     >
-                      <Badge variant="outline" className="text-xs bg-blue-100 text-blue-800 border-blue-300 shrink-0">Current</Badge>
-                      <span className="text-sm sm:text-base font-medium">2025 Flagship</span>
+                      <span className="hidden sm:inline"><Badge variant="outline" className="text-[10px] sm:text-xs bg-blue-100 text-blue-800 border-blue-300 mr-2">Current</Badge></span>
+                      <span>2025 Flagship</span>
                     </TabsTrigger>
-                    <TabsTrigger 
+                    <TabsTrigger
                       value="edition-2024"
-                      className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                      className="flex-shrink-0 px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-medium text-sm sm:text-base leading-snug min-w-fit"
                     >
-                      <span className="text-sm sm:text-base font-medium">2024 Pilot</span>
+                      <span>2024 Pilot</span>
                     </TabsTrigger>
                   </TabsList>
                   

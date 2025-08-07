@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -49,6 +49,7 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
+            <SheetTitle className="sr-only">Main navigation menu</SheetTitle>
             <Link
               href="/"
               className="mb-6 flex items-center gap-2"

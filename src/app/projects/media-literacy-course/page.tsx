@@ -213,19 +213,20 @@ export default function MediaLiteracyCoursePage() {
               </h2>
               <div className="relative">
                 <Tabs defaultValue="cohort-6" className="w-full">
-                  <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 mb-6 p-3 bg-muted rounded-lg gap-3 sm:gap-1 sticky top-[64px] z-10 shadow-sm">
-                    <TabsTrigger 
-                      value="cohort-6" 
-                      className="flex flex-col sm:flex-row items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                  {/* Mobile-friendly TabsList: horizontal scroll on <sm, grid on sm+ */}
+                  <TabsList className="flex w-full overflow-x-auto gap-2 mb-6 p-2 bg-muted rounded-lg sm:grid sm:grid-cols-2 sm:overflow-visible sm:gap-2 sm:p-3">
+                    <TabsTrigger
+                      value="cohort-6"
+                      className="flex-shrink-0 px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-medium text-sm sm:text-base leading-snug min-w-fit"
                     >
-                      <Badge variant="outline" className="text-xs bg-green-100 text-green-800 border-green-300 shrink-0">Latest</Badge>
-                      <span className="text-sm sm:text-base font-medium">Media Literacy Course 6</span>
+                      <span className="hidden sm:inline"><Badge variant="outline" className="text-[10px] sm:text-xs bg-green-100 text-green-800 border-green-300 mr-2">Latest</Badge></span>
+                      <span>Media Literacy 6</span>
                     </TabsTrigger>
-                    <TabsTrigger 
+                    <TabsTrigger
                       value="cohort-5"
-                      className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-semibold text-base sm:text-lg py-4 px-3 text-center min-h-[60px] sm:min-h-[50px]"
+                      className="flex-shrink-0 px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-medium text-sm sm:text-base leading-snug min-w-fit"
                     >
-                      <span className="text-sm sm:text-base font-medium">Media Literacy Course 5</span>
+                      <span>Media Literacy 5</span>
                     </TabsTrigger>
                   </TabsList>
                   
